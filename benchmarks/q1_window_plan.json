@@ -1,0 +1,178 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Subquery Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Alias": "rolling_calc",
+      "Startup Cost": 143202.2,
+      "Total Cost": 195318.89,
+      "Plan Rows": 250547,
+      "Plan Width": 68,
+      "Actual Startup Time": 1007.918,
+      "Actual Total Time": 1045.321,
+      "Actual Rows": 91,
+      "Actual Loops": 1,
+      "Filter": "(rolling_calc.day >= (CURRENT_DATE - '90 days'::interval))",
+      "Rows Removed by Filter": 640,
+      "Shared Hit Blocks": 9540,
+      "Shared Read Blocks": 1786,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 5230,
+      "Temp Written Blocks": 5250,
+      "Plans": [
+        {
+          "Node Type": "WindowAgg",
+          "Parent Relationship": "Subquery",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 143202.2,
+          "Total Cost": 180912.42,
+          "Plan Rows": 751642,
+          "Plan Width": 68,
+          "Actual Startup Time": 776.175,
+          "Actual Total Time": 1044.819,
+          "Actual Rows": 731,
+          "Actual Loops": 1,
+          "Shared Hit Blocks": 9540,
+          "Shared Read Blocks": 1786,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 5230,
+          "Temp Written Blocks": 5250,
+          "Plans": [
+            {
+              "Node Type": "Aggregate",
+              "Strategy": "Sorted",
+              "Partial Mode": "Simple",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 143202.2,
+              "Total Cost": 162121.37,
+              "Plan Rows": 751642,
+              "Plan Width": 36,
+              "Actual Startup Time": 760.224,
+              "Actual Total Time": 1027.541,
+              "Actual Rows": 731,
+              "Actual Loops": 1,
+              "Group Key": [
+                "((orders.created_at)::date)"
+              ],
+              "Shared Hit Blocks": 9540,
+              "Shared Read Blocks": 1786,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 5230,
+              "Temp Written Blocks": 5250,
+              "Plans": [
+                {
+                  "Node Type": "Sort",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 143202.2,
+                  "Total Cost": 145750.38,
+                  "Plan Rows": 1019272,
+                  "Plan Width": 10,
+                  "Actual Startup Time": 759.996,
+                  "Actual Total Time": 900.578,
+                  "Actual Rows": 1020000,
+                  "Actual Loops": 1,
+                  "Sort Key": [
+                    "((orders.created_at)::date)"
+                  ],
+                  "Sort Method": "external merge",
+                  "Sort Space Used": 20928,
+                  "Sort Space Type": "Disk",
+                  "Shared Hit Blocks": 9540,
+                  "Shared Read Blocks": 1786,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 5230,
+                  "Temp Written Blocks": 5250,
+                  "Plans": [
+                    {
+                      "Node Type": "Seq Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "orders",
+                      "Alias": "orders",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 24063.9,
+                      "Plan Rows": 1019272,
+                      "Plan Width": 10,
+                      "Actual Startup Time": 0.046,
+                      "Actual Total Time": 263.168,
+                      "Actual Rows": 1020000,
+                      "Actual Loops": 1,
+                      "Shared Hit Blocks": 9537,
+                      "Shared Read Blocks": 1786,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Planning": {
+      "Shared Hit Blocks": 128,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 2.401,
+    "Triggers": [],
+    "JIT": {
+      "Functions": 15,
+      "Options": {
+        "Inlining": false,
+        "Optimization": false,
+        "Expressions": true,
+        "Deforming": true
+      },
+      "Timing": {
+        "Generation": 1.354,
+        "Inlining": 0.0,
+        "Optimization": 0.827,
+        "Emission": 14.797,
+        "Total": 16.978
+      }
+    },
+    "Execution Time": 1086.295
+  }
+]
