@@ -4,13 +4,13 @@
       "Node Type": "Incremental Sort",
       "Parallel Aware": false,
       "Async Capable": false,
-      "Startup Cost": 2.59,
-      "Total Cost": 152044.48,
-      "Plan Rows": 1019272,
+      "Startup Cost": 2.62,
+      "Total Cost": 153476.7,
+      "Plan Rows": 1029278,
       "Plan Width": 84,
-      "Actual Startup Time": 56.808,
-      "Actual Total Time": 2179.21,
-      "Actual Rows": 1020000,
+      "Actual Startup Time": 54.478,
+      "Actual Total Time": 1935.801,
+      "Actual Rows": 1030000,
       "Actual Loops": 1,
       "Sort Key": [
         "user_id",
@@ -20,7 +20,7 @@
         "user_id"
       ],
       "Full-sort Groups": {
-        "Group Count": 24529,
+        "Group Count": 24777,
         "Sort Methods Used": [
           "quicksort"
         ],
@@ -30,7 +30,7 @@
         }
       },
       "Pre-sorted Groups": {
-        "Group Count": 1037,
+        "Group Count": 1041,
         "Sort Methods Used": [
           "quicksort"
         ],
@@ -39,7 +39,7 @@
           "Peak Sort Space Used": 1979
         }
       },
-      "Shared Hit Blocks": 1023788,
+      "Shared Hit Blocks": 1033787,
       "Shared Read Blocks": 0,
       "Shared Dirtied Blocks": 0,
       "Shared Written Blocks": 0,
@@ -56,14 +56,14 @@
           "Parallel Aware": false,
           "Async Capable": false,
           "Startup Cost": 0.42,
-          "Total Cost": 101619.84,
-          "Plan Rows": 1019272,
+          "Total Cost": 102439.67,
+          "Plan Rows": 1029278,
           "Plan Width": 84,
-          "Actual Startup Time": 34.982,
-          "Actual Total Time": 1865.661,
-          "Actual Rows": 1020000,
+          "Actual Startup Time": 32.62,
+          "Actual Total Time": 1636.911,
+          "Actual Rows": 1030000,
           "Actual Loops": 1,
-          "Shared Hit Blocks": 1023782,
+          "Shared Hit Blocks": 1033781,
           "Shared Read Blocks": 0,
           "Shared Dirtied Blocks": 0,
           "Shared Written Blocks": 0,
@@ -84,14 +84,14 @@
               "Relation Name": "orders",
               "Alias": "orders",
               "Startup Cost": 0.42,
-              "Total Cost": 76138.04,
-              "Plan Rows": 1019272,
+              "Total Cost": 76707.72,
+              "Plan Rows": 1029278,
               "Plan Width": 26,
-              "Actual Startup Time": 9.217,
-              "Actual Total Time": 830.989,
-              "Actual Rows": 1020000,
+              "Actual Startup Time": 9.112,
+              "Actual Total Time": 648.79,
+              "Actual Rows": 1030000,
               "Actual Loops": 1,
-              "Shared Hit Blocks": 1023782,
+              "Shared Hit Blocks": 1033781,
               "Shared Read Blocks": 0,
               "Shared Dirtied Blocks": 0,
               "Shared Written Blocks": 0,
@@ -118,7 +118,7 @@
       "Temp Read Blocks": 0,
       "Temp Written Blocks": 0
     },
-    "Planning Time": 1.164,
+    "Planning Time": 2.245,
     "Triggers": [],
     "JIT": {
       "Functions": 7,
@@ -129,13 +129,13 @@
         "Deforming": true
       },
       "Timing": {
-        "Generation": 0.779,
+        "Generation": 0.693,
         "Inlining": 0.0,
-        "Optimization": 0.717,
-        "Emission": 8.481,
-        "Total": 9.978
+        "Optimization": 0.443,
+        "Emission": 8.658,
+        "Total": 9.793
       }
     },
-    "Execution Time": 2243.086
+    "Execution Time": 2002.985
   }
 ]
